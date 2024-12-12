@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Tilted-One/Miora/static/css/main.12a55a00.css",
+    "main.js": "/Tilted-One/Miora/static/js/main.90ffa6ce.js",
+    "static/media/background.png": "/Tilted-One/Miora/static/media/background.6804ff82606d86fc617f.png",
+    "static/media/bottle1.png": "/Tilted-One/Miora/static/media/bottle1.75d807366e3199c690df.png",
+    "static/media/BottleWhite.png": "/Tilted-One/Miora/static/media/BottleWhite.58940a066f17a913b06c.png",
+    "static/media/MioraLogo.png": "/Tilted-One/Miora/static/media/MioraLogo.7bfed854f7c9d7922d19.png",
+    "static/media/credit-card.svg": "/Tilted-One/Miora/static/media/credit-card.e4051ee9b75a51f4aa592b9ca82fcd91.svg",
+    "static/media/trash.svg": "/Tilted-One/Miora/static/media/trash.5c237a6807f09453e36821ce398a6dc5.svg",
+    "index.html": "/Tilted-One/Miora/index.html",
+    "static/media/send.svg": "/Tilted-One/Miora/static/media/send.ce7e49e5770de324911c9794360bcefc.svg",
+    "static/media/arrow-up.svg": "/Tilted-One/Miora/static/media/arrow-up.e3a3ce96c6224007d60396ad1f536961.svg",
+    "static/media/arrow-down.svg": "/Tilted-One/Miora/static/media/arrow-down.b61e495e95e805bfb5d5a262e293c134.svg",
+    "static/media/arrow-right.svg": "/Tilted-One/Miora/static/media/arrow-right.ecfa3bbe6b65c555c1dad6c6248718e7.svg",
+    "main.12a55a00.css.map": "/Tilted-One/Miora/static/css/main.12a55a00.css.map",
+    "main.90ffa6ce.js.map": "/Tilted-One/Miora/static/js/main.90ffa6ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12a55a00.css",
+    "static/js/main.90ffa6ce.js"
+  ]
+}
