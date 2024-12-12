@@ -4,9 +4,13 @@ export default function CartCheckout(props) {
 
     const [CourierService, setCurierService] = React.useState(5)
     const [total, setTotal] = React.useState(0)
+    const [name, setName] = React.useState('')
+    const [secondName, setSecondName] = React.useState('')
     const [phoneNumber, setPhoneNumber] = React.useState('');
     const [secondPhoneNumber, setSecondPhoneNumber] = React.useState('');
     const [address, setAddress] = React.useState('');
+
+    const [isChecked, setIsChecked] = React.useState(false)
 
     React.useEffect(() => {
         setTotal(props.productPrice + CourierService);
@@ -25,7 +29,11 @@ export default function CartCheckout(props) {
             setSecondPhoneNumber(value);
         }
     };
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
+    }
     let courierService = 5
+
     return (
         <div className='w-full sm:w-2/3 lg:w-1/3 h-auto flex flex-col mx-auto px-4 sm:px-0 sm:mb-16'>
             <ul className="flex flex-col gap-y-4">
@@ -49,12 +57,39 @@ export default function CartCheckout(props) {
             </ul>
             <ul className="flex flex-col gap-y-6 mt-10">
                 <li className="flex flex-col">
+                    <label htmlFor="name" className="mb-1 text-sm">{props.translations.name}Name and lastname</label>
+                    <input
+                        id="name"
+                        type="text"
+                        className="border border-gray rounded p-2 outline-none"
+                        value={name}
+                        placeholder='Name and lastname'
+                    />
+                </li>
+                <li>
+                    <input className='w-4 h-4 mr-2' type="checkbox" name="secondCheckbox" onChange={handleCheckboxChange} id='secondCheckbox'></input>
+                    <label htmlFor="secondCheckbox">Another person will take over.</label>
+                </li>
+                {isChecked &&
+                    <li className="flex flex-col">
+                        <label htmlFor="secondName" className="mb-1 text-sm">Second name</label>
+                        <input
+                            id="secondName"
+                            type="text"
+                            className="border border-gray rounded p-2 outline-none"
+                            value={secondName}
+                            placeholder='Name and lastname'
+                        >
+                        </input>
+                    </li>
+                }
+                <li className="flex flex-col">
                     <label htmlFor="phoneNumber" className="mb-1 text-sm">{props.translations.phoneNum}</label>
                     <input
                         id="phoneNumber"
                         type="tel"
                         className="border border-gray rounded p-2 outline-none"
-                        value={props.phoneNumber}
+                        value={phoneNumber}
                         onChange={props.handlePhoneNumberChange}
                         placeholder={props.translations.phoneNumPlaceHolder}
                     />
@@ -65,7 +100,7 @@ export default function CartCheckout(props) {
                         id="secondPhoneNumber"
                         type="tel"
                         className="border border-gray rounded p-2 outline-none"
-                        value={props.secondPhoneNumber}
+                        value={secondPhoneNumber}
                         onChange={props.handleSecondPhoneNumberChange}
                         placeholder={props.translations.phoneNumSecPlaceHolder}
                     />
@@ -76,7 +111,7 @@ export default function CartCheckout(props) {
                         id="address"
                         type="text"
                         className="border border-gray rounded p-2 outline-none"
-                        value={props.address}
+                        value={address}
                         onChange={(e) => props.setAddress(e.target.value)}
                         placeholder={props.translations.addressPlaceHolder}
                     />

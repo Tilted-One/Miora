@@ -24,6 +24,11 @@ import { getProducts } from './api';
 import Loader from './ui/Loader';
 import productsState from './state/productsState';
 import { useRecoilState } from 'recoil';
+import UpToTop from './ui/UpToTop';
+import TermsOfService from './secondaryPages/TermsOfService';
+import FindAShop from './secondaryPages/FindAShop';
+import PaymentAndDelivery from './secondaryPages/PaymentAndDelivery';
+import Privacy from './secondaryPages/Privacy';
 
 
 
@@ -72,7 +77,7 @@ function App() {
   const [showMineContent, setShowMineContent] = React.useState(sessionStorage.getItem("isMajor") !== "true")
 
   React.useEffect(() => {
-    if(!showMineContent){
+    if (!showMineContent) {
       sessionStorage.setItem("isMajor", "true");
     }
   }, [showMineContent])
@@ -97,7 +102,7 @@ function App() {
     )
   }
   return (
-    <div className='flex flex-col h-screen w-full'>
+    <div className='flex flex-col h-screen w-full relative'>
       {showMineContent ?
         <Confirmation
 
@@ -142,8 +147,25 @@ function App() {
                 translations={translations}
                 isMobile={isMobile}
               />} />
+            <Route path="/find-a-shop" element={
+              <FindAShop />
+            }
+            />
+            <Route path="/payment-and-delivery" element={
+              <PaymentAndDelivery />
+            }
+            />
+            <Route path="/privacy" element={
+              <Privacy />
+            }
+            />
+            <Route path="/terms-of-service" element={
+              <TermsOfService />
+            }
+            />
           </Routes>
           <Footer />
+          <UpToTop />
         </Router>
       }
     </div>

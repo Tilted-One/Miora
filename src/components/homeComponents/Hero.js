@@ -13,7 +13,7 @@ export default function Hero(props) {
         <section className='relative h-screen flex items-center justify-center z-10 text-white p-4 sm:p-10 bg-cover bg-center bg-bgColor'
             style={{ backgroundImage: `url(${BgImage})` }}
         >
-            <h1 className='absolute top-1/2 transform -translate-y-1/2 z-10 text-3xl sm:text-7xl leading-normal font-bold w-64 sm:w-96 text-white text-center sm:text-left'>
+            <h1 className='absolute top-1/2 transform -translate-y-1/2 z-10 text-3xl  sm:text-7xl leading-normal font-bold w-64 sm:w-96 text-white text-center sm:text-center'>
                 {props.translations.heroTitle}
             </h1>
             <p className="absolute bottom-24 left-4 sm:bottom-10 sm:left-10 w-64 sm:w-96 text-center sm:text-left text-sm sm:text-base">
